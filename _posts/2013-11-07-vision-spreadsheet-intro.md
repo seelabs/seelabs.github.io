@@ -7,6 +7,8 @@ tags: [Computer Vision, OpenCV, Python]
 comments: true  
 ---
 
+<iframe width="560" height="315" src="http://www.youtube.com/embed/X7DeeexQJeg" frameborder="0"> </iframe>
+
 ### Introduction
 
 Vision Spreadsheet is an application designed to explore and solve computer
