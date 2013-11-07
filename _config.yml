@@ -1,5 +1,5 @@
 title:            Seelabs
-description:      Seelabs developers blog
+description:      Applied Imaging
 logo:             site-logo.png
 disqus_shortname: 
 search:           true
@@ -10,7 +10,7 @@ url:              http://localhost:4000
 owner:
   name:           Seelabs
   avatar:         bio-photo.jpg
-  email:          info@seelabs.com
+  email:          scott.determan@yahoo.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        MonkScott
   facebook:       
@@ -36,11 +36,6 @@ links:
     url: /about
   - title: Articles
     url: /articles
-  - title: Theme Setup
-    url: /theme-setup
-  - title: Made Mistakes
-    url: http://mademistakes.com
-    external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
