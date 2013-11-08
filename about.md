@@ -10,7 +10,7 @@ image:
   creditlink: http://www.flickr.com/photos/mikebaird/398077070/ 
 ---
 
-Seelab teaches computers to tell us interesting things about images and videos. You can hire us to build solutions for you or (if you're a computer vision expert yourself) you are welcome to use our free tools to solve your own problems. 
+At Seelab we love solving computer vision problems. Our first project is Vision Spreadsheet. You are welcome to use it for free. You can also hire us to build solutions for you.
 
 ## Seelabs is all about:
 
