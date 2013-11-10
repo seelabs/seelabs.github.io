@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Overview of Vision Spreadsheet"
-description: "Examples and code for displaying images in posts."
+description: "Introduction to Vision Spreadsheet"
 category: articles
 tags: [Computer Vision, OpenCV, Python]
 comments: true  
