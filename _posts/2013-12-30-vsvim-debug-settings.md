@@ -8,9 +8,10 @@ comments: true
 ---
 
 This is a quick hack to let you type a single 's', 'n', or 'f' in visual studio
-to step into, over, or out of a function - just like single key mode in GDB. It
-will be most useful for people who use vim to edit code and only use visual
-studio for debugging.
+to step into, over, or out of a function - just like [single key mode in
+GDB](https://sourceware.org/gdb/onlinedocs/gdb/TUI-Single-Key-Mode.html). It will
+be most useful for people who use vim to edit code and only use visual studio for
+debugging.
 
 The first release of the See Labs GUI will only runs on windows. However, in
 order to use excellent tools like valgrind and the clang sanitizer tools, I do
