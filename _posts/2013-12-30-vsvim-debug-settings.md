@@ -53,7 +53,7 @@ nmap c :vsc Debug.Start\<CR\>
 nmap K :vsc Debug.StopDebugging\<CR\>
 nmap p :vsc Debug.QuickWatch\<CR\>
 nmap B :vsc Build.BuildSolution\<CR\>
-\</pre\>
+</pre>
 
 # Testing
 
