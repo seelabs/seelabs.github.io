@@ -44,20 +44,22 @@ The hack is very simple:
    self-explanatory:
 
 {% highlight html %}
+set incsearch
 map <C-[> <ESC>
-nmap s :vsc Debug.StepInto<CR>
-nmap n :vsc Debug.StepOver<CR>
-nmap f :vsc Debug.StepOut<CR>
-nmap b :vsc Debug.ToggleBreakpoint<CR>
-nmap c :vsc Debug.Start<CR>
-nmap K :vsc Debug.StopDebugging<CR>
-nmap p :vsc Debug.QuickWatch<CR>
-nmap B :vsc Build.BuildSolution<CR>
+nnoremap s :vsc Debug.StepInto<CR>
+nnoremap n :vsc Debug.StepOver<CR>
+nnoremap f :vsc Debug.StepOut<CR>
+nnoremap b :vsc Debug.ToggleBreakpoint<CR>
+nnoremap c :vsc Debug.Start<CR>
+nnoremap K :vsc Debug.StopDebugging<CR>
+nnoremap p :vsc Debug.QuickWatch<CR>
+nnoremap B :vsc Build.BuildSolution<CR>
+nnoremap <CR> n
 {% endhighlight %}
 
 The bindings above don't work well for actual editing. For example, 'n' conflicts
-with the usual vim binding of 'next match'.  This works for me because I don't
-use the visual studio editor for editing.
+with the usual vim binding of 'next match'. I have remapped <CR> to work as n usually does. This
+is OK since I don't use the visual studio editor for editing.
 
 
 # Testing
