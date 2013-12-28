@@ -43,15 +43,17 @@ The hack is very simple:
    with a .vimrc in my cygwin home directory (i.e. /cygwin/home/swd). It should be
    self-explanatory:
 
-    map <C-[> <ESC>
-    nmap s :vsc Debug.StepInto<CR>
-    nmap n :vsc Debug.StepOver<CR>
-    nmap f :vsc Debug.StepOut<CR>
-    nmap b :vsc Debug.ToggleBreakpoint<CR>
-    nmap c :vsc Debug.Start<CR>
-    nmap K :vsc Debug.StopDebugging<CR>
-    nmap p :vsc Debug.QuickWatch<CR>
-    nmap B :vsc Build.BuildSolution<CR>
+```   
+map \<C-[\> \<ESC\>
+nmap s :vsc Debug.StepInto\<CR\>
+nmap n :vsc Debug.StepOver\<CR\>
+nmap f :vsc Debug.StepOut\<CR\>
+nmap b :vsc Debug.ToggleBreakpoint\<CR\>
+nmap c :vsc Debug.Start\<CR\>
+nmap K :vsc Debug.StopDebugging\<CR\>
+nmap p :vsc Debug.QuickWatch\<CR\>
+nmap B :vsc Build.BuildSolution\<CR\>
+```
 
 # Testing
 
