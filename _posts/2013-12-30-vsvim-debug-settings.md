@@ -43,7 +43,7 @@ The hack is very simple:
    with a .vimrc in my cygwin home directory (i.e. /cygwin/home/swd). It should be
    self-explanatory:
 
-<pre>
+{% highlight html %}
 map <C-[> <ESC>
 nmap s :vsc Debug.StepInto<CR>
 nmap n :vsc Debug.StepOver<CR>
@@ -53,7 +53,7 @@ nmap c :vsc Debug.Start<CR>
 nmap K :vsc Debug.StopDebugging<CR>
 nmap p :vsc Debug.QuickWatch<CR>
 nmap B :vsc Build.BuildSolution<CR>
-</pre>
+{% endhighlight %}
 
 # Testing
 
