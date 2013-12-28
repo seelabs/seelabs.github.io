@@ -55,7 +55,7 @@ nmap p :vsc Debug.QuickWatch<CR>
 nmap B :vsc Build.BuildSolution<CR>
 {% endhighlight %}
 
-The binding above don't work well for actual editing. For example, 'n' conflicts
+The bindings above don't work well for actual editing. For example, 'n' conflicts
 with the usual vim binding of 'next match'.  This works for me because I don't
 use the visual studio editor for editing.
 
