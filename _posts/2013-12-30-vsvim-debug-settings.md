@@ -57,9 +57,10 @@ nnoremap B :vsc Build.BuildSolution<CR>
 nnoremap <CR> n
 {% endhighlight %}
 
-The bindings above don't work well for actual editing. For example, 'n' conflicts
-with the usual vim binding of 'next match'. I have remapped <CR> to work as n usually does. This
-is OK since I don't use the visual studio editor for editing.
+The bindings above aren't perfect for actual editing. For example, 'n' conflicts
+with the usual vim binding of 'next match'. I have remapped <CR> to work as n
+usually does. This works OK for me since I don't use the visual studio editor for
+editing.
 
 
 # Testing
