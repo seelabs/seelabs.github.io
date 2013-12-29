@@ -19,12 +19,11 @@ The first release of the See Labs GUI will only runs on windows. However, in
 order to use excellent tools like valgrind and the clang sanitizer tools, I do
 have a linux port (there is also a client port for the raspberry pi).
 
-When I'm debugging on Linux, I'm usually in GDB's "Single Key Mode". You toggle
-this mode by typing C-x s. When in single key mode, typing a single 's' (no CR)
-will step into a function, 'n' will step over a function, 'f' will step out of a
-function (finish). In visual studio the equivalent keys are F11, F10, and
-Shift-F11. There are two reasons I want single key mode instead of the visual
-studio defaults:
+When I'm debugging on Linux, I'm usually in GDB's "Single Key Mode". When in
+single key mode, typing a single 's' (no CR) will step into a function, 'n' will
+step over a function, 'f' will step out of a function (finish). In visual studio
+the equivalent keys are F11, F10, and Shift-F11. There are two reasons I want
+single key mode instead of the visual studio defaults:
 
 1. I like to keep my windows and linux environments as similar as possible. For
    example, on windows I use cygwin and emacs (in evil mode).
