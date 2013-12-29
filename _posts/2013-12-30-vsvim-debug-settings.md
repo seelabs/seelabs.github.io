@@ -70,8 +70,8 @@ nnoremap p :vsc Debug.QuickWatch<CR>
 
 
 Notice that the 'n' command for single key debugging conflicts with the usual vim
-binding of 'next match'. I have remapped <CR> to work as n usually does so I can
-still search while in debug mode.
+binding of 'next match'. I have remapped 'carriage return' to work as n usually
+does so I can still search while in debug mode.
 
 # Usage
 
