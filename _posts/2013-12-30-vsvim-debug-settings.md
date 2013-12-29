@@ -81,3 +81,52 @@ mode. Type a single 'b' to set a breakpoint. 'n' to go to the next line
 keybinding in single_key_debug.vimrc for reference.
 
 Type Control-u to exit single key debug mode.
+
+# Using u and d to navidate the stack
+
+Unfortunately, there is no easy to get the current stack frame, so implementing
+'u' to move up the frame and 'd' to move down the frame is difficult to
+implement. However, I implemented this hacky way to do it. The idea is to:
+
+* Create a set to files named 'stack_commands_n.vimrc' where 'n' is the current stack frame.
+
+* Each file binds 'u' to set to the next stack from and source
+  'stack_commands_n+1.vimrc' and 'd' to move down and source
+  'stack_commands_n-1.vimrc
+
+For example, here are the contents for stack_commands_3.vimrc:
+
+{% highlight html %}
+nnoremap u :vsc Debug.SetCurrentStackFrame 4<CR>:source /Users/swd/vsvim_single_key_debug/stack_commands_4.vimrc<CR>
+nnoremap d :vsc Debug.SetCurrentStackFrame 2<CR>:source /Users/swd/vsvim_single_key_debug/stack_commands_2.vimrc<CR>
+{% endhighlight %}
+
+* I used the following simple python script to auto generate these files for me:
+
+{% highlight python %}
+file_template=\
+'''
+nnoremap u :vsc Debug.SetCurrentStackFrame %(next)d<CR>:source /Users/swd/vsvim_single_key_debug/stack_commands_%(next)d.vimrc<CR>
+nnoremap d :vsc Debug.SetCurrentStackFrame %(prev)d<CR>:source /Users/swd/vsvim_single_key_debug/stack_commands_%(prev)d.vimrc<CR>
+'''
+file_name_template='stack_commands_%(frame)d.vimrc'
+for i in range(1,50):
+    file_name=file_name_template % {'frame': i}
+    with open(file_name,'w') as f:
+        if i==1:
+            f.write(file_template % {'next':i+1,'prev':i})
+        else:
+            f.write(file_template % {'next':i+1,'prev':i-1})
+{% endhighlight %}
+
+* I also modified to 'c' command to source stack_commands_1.vimrc (i.e. reset the current stack frame). 
+{% highlight html %}
+nnoremap c :vsc Debug.Start<CR>:source /Users/swd/vsvim_single_key_debug/stack_commands_1.vimrc<CR>
+{% endhighlight %}
+
+* I also added the 'r' command to 'reset' the stack commands in case it gets out of sync
+{% highlight html %}
+nnoremap r :source /Users/swd/vsvim_single_key_debug/stack_commands_1.vimrc<CR>
+{% endhighlight %}
+
+* Of course, all the above assumes these files live in /Users/swd/vsvim_single_key_debug 
