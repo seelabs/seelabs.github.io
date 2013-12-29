@@ -7,6 +7,8 @@ tags: [debugging]
 comments: true  
 ---
 
+# Introduction
+
 This is a quick hack to let you type a single 's', 'n', or 'f' in visual studio
 to step into, over, or out of a function - just like [single key mode in
 GDB](https://sourceware.org/gdb/onlinedocs/gdb/TUI-Single-Key-Mode.html). It will
@@ -31,14 +33,16 @@ studio defaults:
    hit a "Fn" modifier key to get at F7-F12. So to hit shift-F11 to step out of a
    function requires me to hit three keys (Fn-S-F5).
 
+# Installation
+
 The hack is very simple:
 
-1. Install
+* Install
    [VsVim](http://visualstudiogallery.msdn.microsoft.com/59ca71b3-a4a3-46ca-8fe1-0e90e3f79329). This
    will install a vim emulator as your text editor. If you don't like vim this
    hack is not for you.
 
-2. VsVim will read your .vimrc file. Put the folowing .vimrc in your "windows"
+* VsVim will read your .vimrc file. Put the folowing .vimrc in your "windows"
    home directory (i.e. /User/swd for me). Since I run cygwin, this won't conflict
    with a .vimrc in my cygwin home directory (i.e. /cygwin/home/swd). It should be
    self-explanatory:
@@ -46,6 +50,16 @@ The hack is very simple:
 {% highlight html %}
 set incsearch
 map <C-[> <ESC>
+nnoremap B :vsc Build.BuildSolution<CR>
+nnoremap <CR> n
+
+nnoremap <C-d> :source /Users/swd/single_key_debug.vimrc<CR>
+nnoremap <C-u> :nunmap s<CR>:nunmap n<CR>:nunmap f<CR>:nunmap b<CR>:nunmap c<CR>:nunmap K<CR>:nunmap p<CR>
+{% endhighlight %}
+
+* Create a file in your "windows" home directory called single_key_debug.vimrc and put the following commands in it:
+
+{% highlight html %}
 nnoremap s :vsc Debug.StepInto<CR>
 nnoremap n :vsc Debug.StepOver<CR>
 nnoremap f :vsc Debug.StepOut<CR>
@@ -53,18 +67,18 @@ nnoremap b :vsc Debug.ToggleBreakpoint<CR>
 nnoremap c :vsc Debug.Start<CR>
 nnoremap K :vsc Debug.StopDebugging<CR>
 nnoremap p :vsc Debug.QuickWatch<CR>
-nnoremap B :vsc Build.BuildSolution<CR>
-nnoremap <CR> n
 {% endhighlight %}
 
-The bindings above aren't perfect for actual editing. For example, 'n' conflicts
-with the usual vim binding of 'next match'. I have remapped <CR> to work as n
-usually does. This works OK for me since I don't use the visual studio editor for
-editing.
 
+Notice that the 'n' command for single key debugging conflicts with the usual vim
+binding of 'next match'. I have remapped <CR> to work as n usually does so I can
+still search while in debug mode.
 
-# Testing
+# Usage
 
-Bring up a project in visual studio. Type a single 'b' to set a breakpoint. 'n'
-to go to the next line (step-over), 's' to step-into, f to step out (finish),
-etc.
+Bring up a project in visual studio. Type Control-d to enter single key debug
+mode. Type a single 'b' to set a breakpoint. 'n' to go to the next line
+(step-over), 's' to step-into, f to step out (finish), etc. Refer to the
+keybinding in single_key_debug.vimrc for reference.
+
+Type Control-u to exit single key debug mode.
