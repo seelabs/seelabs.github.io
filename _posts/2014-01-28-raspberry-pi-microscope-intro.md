@@ -9,7 +9,7 @@ comments: true
 
 <iframe width="560" height="315" src="http://www.youtube.com/embed/qSigkvbpb_Q" frameborder="0"> </iframe>
 
-I put a raspberry pi camera on my microscope - and I think it's the start of a really cool project. You can watch the two minute video above for a sneak peak. 
+I put a raspberry pi camera on my microscope - and I think it is the start of a really cool project. You can watch the two minute video above for a sneak peak. 
 
 ### Thank You
 
