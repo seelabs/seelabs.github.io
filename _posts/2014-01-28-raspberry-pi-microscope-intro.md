@@ -16,5 +16,5 @@ I put a raspberry pi camera on my microscope - and I think it is the start of a 
 I want to thank Luis Ibanez for two very helpful blog posts. The blog post here
 helped me set up a cross compiler for the pi:
 <http://www.kitware.com/blog/home/post/426> and the the blog post here is for a
-3d printed camera interface for a microscope (he's even sending me one!):
+3d printed camera interface for a microscope (he is even sending me one!):
 <http://www.kitware.com/blog/home/post/595>
